@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection</title>
+    <style>
+        /* Ensure the body fills the entire screen and has a black background */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Wrapper to maintain 16:9 aspect ratio */
+        .aspect-ratio-box {
+            width: 100%;
+            height: 100%;
+            max-width: 177.78vh; /* 16:9 aspect ratio */
+            max-height: 56.25vw; /* 9:16 aspect ratio */
+            background-color: #1c1c1c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 5vh 5vw;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Header styling */
+        .aspect-ratio-box h1 {
+            color: #ffffff;
+            font-size: 5vh; /* Size relative to the viewport height */
+            margin-bottom: 5vh; /* Margin relative to the viewport height */
+            text-align: center;
+            letter-spacing: 0.5vh;
+            font-weight: 300;
+        }
+
+        /* Game selection buttons */
+        .game-button {
+            background-color: #ff6347;
+            color: #ffffff;
+            font-size: 3vh; /* Size relative to the viewport height */
+            padding: 2vh 4vw; /* Padding relative to the viewport height and width */
+            margin: 2vh 0; /* Margin relative to the viewport height */
+            border: none;
+            border-radius: 3vh;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            width: 60%; /* Width relative to the aspect-ratio-box */
+            max-width: 50vw;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .game-button:hover {
+            background-color: #ff4500;
+            transform: translateY(-1vh);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-button:active {
+            transform: translateY(-0.5vh);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer with optional additional info */
+        .footer {
+            position: absolute;
+            bottom: 2vh;
+            width: 100%;
+            text-align: center;
+            color: #888888;
+            font-size: 2vh; /* Size relative to the viewport height */
+        }
+    </style>
+</head>
+<body>
+    <div class="aspect-ratio-box" id="main-content">
+        <h1>Select a Game</h1>
+        <button class="game-button" onclick="loadGame('game1')">Game 1</button>
+        <button class="game-button" onclick="loadGame('game2')">Game 2</button>
+        <button class="game-button" onclick="loadGame('game3')">Game 3</button>
+        <button class="game-button" onclick="loadGame('game4')">Game 4</button>
+        <div class="footer">© 2024 Your Game Company</div>
+    </div>
+
+    <script>
+        function loadGame(game) {
+            const mainContent = document.getElementById('main-content');
+            let gameHtml;
+
+            switch(game) {
+                case 'game1':
+                    gameHtml = `
+                        <h1>Game 1</h1>
+                        <p>This is the content for Game 1. Replace this with your game's HTML code.</p>
+                        <button class="game-button" onclick="goBack()">Go Back</button>
+                    `;
+                    break;
+                case 'game2':
+                    gameHtml = `
+                        <h1>Game 2</h1>
+                        <p>This is the content for Game 2. Replace this with your game's HTML code.</p>
+                        <button class="game-button" onclick="goBack()">Go Back</button>
+                    `;
+                    break;
+                case 'game3':
+                    gameHtml = `
+                        <h1>Game 3</h1>
+                        <p>This is the content for Game 3. Replace this with your game's HTML code.</p>
+                        <button class="game-button" onclick="goBack()">Go Back</button>
+                    `;
+                    break;
+                case 'game4':
+                    gameHtml = `
+                        <h1>Game 4</h1>
+                        <p>This is the content for Game 4. Replace this with your game's HTML code.</p>
+                        <button class="game-button" onclick="goBack()">Go Back</button>
+                    `;
+                    break;
+                default:
+                    gameHtml = `<p>Error loading game. Please try again.</p>`;
+                    break;
+            }
+
+            mainContent.innerHTML = gameHtml;
+        }
+
+        function goBack() {
+            location.reload(); // Reloads the page to show the game selection screen again
+        }
+    </script>
+</body>
+</html>

@@ -2,19 +2,19 @@
 markdown: kramdown
 
 # URL of the Site
-url: 'https://parties.scyted.tv'
+url: 'https://activities.scyted.tv'
 # Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
 baseurl: 
 
 
 # Title of the Site
-title: ScytedTV Parties
+title: ScytedTV Activities
 # Description of the Site
-description: Events, Watch Parties, etc.
+description: ScytedTV Studios' Discord Activities
 # URL of Image of the Site
 site-image: /assets/images/meta.jpg
 # Keywords of the Site
-site-keywords: ScytedTV Studios, Events, Watch Parties, ScytedTV Parties
+site-keywords: ScytedTV Studios
 # URL for the Image of custom Favicon
 favicon-url: https://cdn.scyted.tv/favicon.ico
 
@@ -46,9 +46,9 @@ author-name: ScytedTV Parties
 # URL for the Image of the Author
 author-image: /assets/images/meta.jpg
 # 60 Words About the Author
-author-about: ScytedTV Parties
+author-about: ScytedTV Activities
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
-author-url: https://parties.scyted.tv/
+author-url: https://activities.scyted.tv/
 
 # SASS
 sass:

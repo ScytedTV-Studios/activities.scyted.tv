@@ -29,7 +29,6 @@
             justify-content: center;
             flex-direction: column;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-            border-radius: 20px;
             overflow: hidden;
             padding: 5vh 5vw;
             box-sizing: border-box;
@@ -126,6 +125,14 @@
             iframe.style.display = 'none';
             iframe.src = '';
         }
+
+        // Listen for messages from the game iframe
+        window.addEventListener('message', function(event) {
+            if (event.data.action === 'quitSelected') {
+                // Go back to the main menu when 'Quit' is selected
+                goBack();
+            }
+        });
     </script>
 </body>
 </html>
